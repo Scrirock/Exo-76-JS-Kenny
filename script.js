@@ -1,14 +1,14 @@
 let deathCount = 0;
 
-document.getElementById('up').addEventListener('click',function() {
+function up(){
     let t = parseInt(document.getElementById('kenny').style.top);
     if (t-10 > 0){
         t = t - 10;
         document.getElementById('kenny').style.top = t + 'px';
     }
-});
+}
 
-document.getElementById('left').addEventListener('click',function() {
+function left(){
     let t = parseInt(document.getElementById('kenny').style.left);
     if (t-10 > 0) {
         t = t - 10;
@@ -21,68 +21,53 @@ document.getElementById('left').addEventListener('click',function() {
         deathCount++;
         count.innerHTML = "nbr de mort "+deathCount;
     }
-});
+}
 
-document.getElementById('right').addEventListener('click',function() {
+function right(){
     let t = parseInt(document.getElementById('kenny').style.left);
     if (t-10 < 460) {
         t = t + 10;
         document.getElementById('kenny').style.left = t + 'px';
     }
-});
+}
 
-document.getElementById('down').addEventListener('click',function() {
+function down(){
     let t = parseInt(document.getElementById('kenny').style.top);
     if (t-10 < 460) {
         t = t + 10;
         document.getElementById('kenny').style.top = t + 'px';
     }
-});
+}
+
+document.getElementById('up').addEventListener('click', up)
+
+document.getElementById('left').addEventListener('click',left)
+
+document.getElementById('right').addEventListener('click',right)
+
+document.getElementById('down').addEventListener('click',down)
 
 document.body.addEventListener('keydown',function(event) {
     if (event.key === "ArrowUp") {
-        let t = parseInt(document.getElementById('kenny').style.top);
-        if (t - 10 > 0) {
-            t = t - 10;
-            document.getElementById('kenny').style.top = t + 'px';
-        }
+        up();
     }
 });
 
 document.body.addEventListener('keydown',function(event) {
     if (event.key === "ArrowLeft") {
-        let t = parseInt(document.getElementById('kenny').style.left);
-        if (t - 10 > 0) {
-            t = t - 10;
-            document.getElementById('kenny').style.left = t + 'px';
-        }
-        if (t < 40) {
-            document.getElementById('kenny').style.top = 200 + 'px';
-            document.getElementById('kenny').style.left = 200 + 'px';
-            alert("kenny est mort");
-            deathCount++;
-            count.innerHTML = "nbr de mort " + deathCount;
-        }
+        left();
     }
 });
 
 document.body.addEventListener('keydown',function(event) {
     if (event.key === "ArrowRight") {
-        let t = parseInt(document.getElementById('kenny').style.left);
-        if (t - 10 < 460) {
-            t = t + 10;
-            document.getElementById('kenny').style.left = t + 'px';
-        }
+        right();
     }
 });
 
 document.body.addEventListener('keydown',function(event) {
     if (event.key === "ArrowDown") {
-        let t = parseInt(document.getElementById('kenny').style.top);
-        if (t - 10 < 460) {
-            t = t + 10;
-            document.getElementById('kenny').style.top = t + 'px';
-        }
+        down();
     }
 });
 
