@@ -40,11 +40,8 @@ function down(){
 }
 
 document.getElementById('up').addEventListener('click', up)
-
 document.getElementById('left').addEventListener('click',left)
-
 document.getElementById('right').addEventListener('click',right)
-
 document.getElementById('down').addEventListener('click',down)
 
 document.body.addEventListener('keydown',function(event) {
