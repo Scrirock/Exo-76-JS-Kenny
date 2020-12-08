@@ -48,22 +48,13 @@ document.body.addEventListener('keydown',function(event) {
     if (event.key === "ArrowUp") {
         up();
     }
-});
-
-document.body.addEventListener('keydown',function(event) {
-    if (event.key === "ArrowLeft") {
+    else if (event.key === "ArrowLeft") {
         left();
     }
-});
-
-document.body.addEventListener('keydown',function(event) {
-    if (event.key === "ArrowRight") {
+    else if (event.key === "ArrowRight") {
         right();
     }
-});
-
-document.body.addEventListener('keydown',function(event) {
-    if (event.key === "ArrowDown") {
+    else if (event.key === "ArrowDown") {
         down();
     }
 });
